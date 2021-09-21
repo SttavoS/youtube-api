@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+}
+
+.container {
+  width: 1280px;
+	margin: 0 auto;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.videos-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.video-item-image {
+  cursor: pointer;
+}
+
+.video-item-title {
+  font-size: 18px;
+}

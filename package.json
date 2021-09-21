@@ -1,0 +1,19 @@
+{
+  "name": "projeto-yt-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development --watch"
+  },
+  "keywords": [],
+  "author": "SttavoS",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.1.1"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0"
+  }
+}

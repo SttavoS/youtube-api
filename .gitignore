@@ -1,0 +1,4 @@
+.env.example
+youtube/
+node_modules/
+environment.js
