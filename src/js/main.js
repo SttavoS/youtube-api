@@ -16,12 +16,16 @@ const videoWrapperList = document.querySelector(".videos-list");
 
 playlistVideos.forEach((video) => {
   const thumbnail = video.snippet.thumbnails.medium.url;
-  const template = `<li class="card video-item">
-      <img class=" card-img-top video-item-image" src="${thumbnail}" alt="${video.snippet.title}" id="${video.snippet.resourceId.videoId}" />
+  const videoTitle = video.snippet.title.split("//")[0];
+
+  const template = `
+    <li class="card video-item">
+      <img class="img-fluid card-img-top video-item-image" src="${thumbnail}" alt="${videoTitle}" id="${video.snippet.resourceId.videoId}" />
       <div class="card-body">
-        <h5 class="card-title video-item-title">${video.snippet.title}</h5>
+        <h5 class="card-title video-item-title">${videoTitle}</h5>
       </div>
-    </li>`;
+    </li>
+  `;
 
   videoWrapperList.insertAdjacentHTML("beforeend", template);
 });
@@ -31,6 +35,7 @@ const videosThumbHandler = document.querySelectorAll(".video-item-image");
 const videoModal = new bootstrap.Modal(document.querySelector("#video-modal"));
 const youtubeVideoplayer = document.querySelector("#youtube-videoplayer");
 const modalVideoTitle = document.querySelector("#video-modal-label");
+const goToYoutubeBtn = document.querySelector("#go-to-yt");
 
 videosThumbHandler.forEach((video) => {
   video.addEventListener("click", (event) => {
@@ -40,6 +45,7 @@ videosThumbHandler.forEach((video) => {
     const videoId = event.target.id;
     modalVideoTitle.innerHTML = event.target.alt;
     youtubeVideoplayer.src = `https://www.youtube.com/embed/${videoId}`;
+    goToYoutubeBtn.href = `https://youtu.be/${videoId}`;
 
     videoModal.show();
   });

@@ -13,10 +13,6 @@ body {
   background-color: #f0f0f0;
 }
 
-.container {
-  width: 1280px;
-	margin: 0 auto;
-}
 
 h1 {
   font-size: 36px;
@@ -42,4 +38,17 @@ h2 {
 
 .video-item-title {
   font-size: 18px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .videos-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .videos-list {
+    grid-template-columns: 1fr;
+    margin-right: 20px;
+  }
 }
